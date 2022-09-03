@@ -1,23 +1,28 @@
 <template>
   <div class="app">
-    <Tweet v-for="(tweet, index) in tweets"
-    :key="index"
-    :user="tweet.user"
-    :timestamp="tweet.timestamp"
-    :message="tweet.message"/>
+    <Tweet
+      v-for="(tweet, index) in tweets"
+      :key="index"
+      :user="tweet.user.name"
+      :image="tweet.user.image"
+      :handle="tweet.user.handle"
+      :timestamp="tweet.timestamp"
+      :message="tweet.message"
+    />
 
     <div>
       <h1>Test 2 !!!!</h1>
     </div>
 
- 
-    <Tweet v-for="tweet in tweets" 
-  :key="tweet.user" 
-  :name="tweet.user"
-  :image="tweet.user.image"
-  :handle="tweet.user.handle" />
-      
-    
+    <Tweet
+      v-for="tweet in tweets"
+      :key="tweet.user"
+      :user="tweet.user.name"
+      :image="tweet.user.image"
+      :handle="tweet.user.handle"
+      :timestamp="tweet.timestamp"
+      :message="tweet.message"
+    />
   </div>
 </template>
 
@@ -26,11 +31,10 @@ import Tweet from "./components/Tweet.vue";
 
 export default {
   name: "App",
-  
 
   data() {
     return {
-        tweets: [
+      tweets: [
         {
           user: {
             name: "Thoughts of Dog®",

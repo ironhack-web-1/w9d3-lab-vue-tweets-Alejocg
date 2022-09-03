@@ -1,23 +1,19 @@
 <template>
   <div className="tweet">
-    <img
-      src="https://i.imgur.com/9yw1Fyw.jpg"
-      className="profile"
-      alt="profile"
-    />
+    <img v-bind:src="image" className="profile" alt="profile" />
 
     <div className="body">
       <div className="top">
         <span className="user">
-          <span className="name">{{user}}</span>
-          <span className="handle">{{user}}</span>
+          <span className="name">{{ user }}</span>
+          <span className="handle">{{ handle }}</span>
         </span>
 
-        <span className="timestamp">{{timestamp}}</span>
+        <span className="timestamp">{{ timestamp }}</span>
       </div>
 
       <p className="message">
-        {{message}}
+        {{ message }}
       </p>
 
       <div className="actions">
@@ -34,14 +30,13 @@
 </template>
 
 <script>
-  
-  export default {
-    props: ["user","message", "timestamp"],
-    data() {
-      return {};
-    },
-  };
-  </script>
+export default {
+  props: ["user", "message", "image", "handle", "timestamp"],
+  data() {
+    return {};
+  },
+};
+</script>
 
 <style scoped>
 a {
