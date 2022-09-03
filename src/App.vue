@@ -1,18 +1,15 @@
 <template>
-  
   <div class="app">
-    <Tweet v-for="tweet in tweets" :key="tweet.user.name" />
+    <Tweet v-for="tweet in tweets" :key="tweet.user" />
 
     <div>
-    <h1> Test 2</h1>
+      <h1>Test 2 !!</h1>
     </div>
 
-    
- <ul id="v-for-object" class="demo">
-  <li v-for="value in tweets" :key="value.user">
-    {{ value.user }}
-  </li>
-</ul> 
+ 
+      <Tweet v-for="value in tweets" :key="value.user">
+        {{ value.user }}
+      </Tweet>
     
   </div>
 </template>
@@ -23,8 +20,7 @@ import Tweet from "./components/Tweet.vue";
 export default {
   data() {
     return {
-      el: '#v-for-object',
-      tweets: [
+        tweets: [
         {
           user: {
             name: "Thoughts of Dog®",
